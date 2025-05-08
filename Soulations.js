@@ -121,3 +121,35 @@ function getDayType(day) {
 console.log(getDayType(Day.Monday));
 console.log(getDayType(Day.Saturday));
 console.log(getDayType(Day.Sunday));
+//Create an async function that:
+//Returns the square of a number after 1 second
+//Rejects if the number is negative
+function squareAsync(n) {
+    // Using a custom promise-like implementation for ES5 compatibility
+    var thenable = {
+        then: function (onFulfilled, onRejected) {
+            if (n < 0) {
+                if (onRejected) {
+                    setTimeout(function () {
+                        onRejected(new Error("Negative number not allowed"));
+                    }, 0);
+                }
+            }
+            else {
+                setTimeout(function () {
+                    if (onFulfilled) {
+                        onFulfilled(n * n);
+                    }
+                }, 1000);
+            }
+            return thenable;
+        },
+        catch: function (onRejected) {
+            return thenable.then(undefined, onRejected);
+        }
+    };
+    return thenable;
+}
+// Example usage:
+squareAsync(4).then(function (result) { console.log(result); }); // Output after 1s: 16
+squareAsync(-3).catch(function (error) { console.error(error); });

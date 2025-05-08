@@ -144,4 +144,8 @@ console.log(getDayType(Day.Sunday));
 
 
 
+//Create an async function that:
+//Returns the square of a number after 1 second
+//Rejects if the number is negative
 
+ 
