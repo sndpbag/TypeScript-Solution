@@ -64,5 +64,4 @@ const value = getValue(person, "name");  // Output: "Rahul"
 ✔️ Here, `keyof Person` gives us `"name" | "age"` — the names of the properties of `Person`.
 
 ---
-
-Let me know if you want a downloadable `README.md` version or want this written directly into a file.
+ 
