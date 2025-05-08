@@ -22,3 +22,15 @@ function formatString(input: string, toUpper?: boolean): string {
   ];
   
   console.log(filterByRating(books)); 
+
+
+//   Description: Create a generic function that concatenates multiple arrays of the same type using rest parameters.
+
+function concatenateArrays<T>(...arrays: T[][]): T[] {
+    return arrays.reduce((acc, curr) => acc.concat(curr), []);
+  }
+
+ const result1 = concatenateArrays(["a", "b"], ["c"]);  
+ const result2 = concatenateArrays([1, 2], [3, 4], [5]);
+ console.log(result1);
+ console.log(result2);
