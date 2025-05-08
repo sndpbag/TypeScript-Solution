@@ -24,7 +24,7 @@ const books = [
 console.log(filterByRating(books));
 
 
-//   Description: Create a generic function that concatenates multiple arrays of the same type using rest parameters.
+ 
 
 function concatenateArrays<T>(...arrays: T[][]): T[] {
     return arrays.reduce((acc, curr) => acc.concat(curr), []);
@@ -35,8 +35,7 @@ const result2 = concatenateArrays([1, 2], [3, 4], [5]);
 console.log(result1);
 console.log(result2);
 
-//  Create a Vehicle class with private make and year properties and a getInfo() method.
-//Create a Car class extending Vehicle, adding a private model property and a getModel() method.
+ 
 
 class Vehicle {
     private make: string;
@@ -65,15 +64,13 @@ class Car extends Vehicle {
     }
 }
 
-// Example usage:
+ 
 const myCar = new Car("Toyota", 2020, "Corolla");
 console.log(myCar.getInfo());
 console.log(myCar.getModel());
 
 
-//   Description: Write a function that takes a string | number and returns:
-//The length if it's a string
-//The number multiplied by 2 if it's a number
+ 
 
 function processValue(value: string | number): number {
     if (typeof value === "string") {
@@ -89,7 +86,7 @@ console.log(processValue(10));
 
 
 
-//  Description: Define an interface Product and create a function to find the product with the highest price in an array. If the array is empty, return null.
+ 
 
 interface Product {
     name: string;
@@ -118,8 +115,7 @@ console.log(getMostExpensiveProduct(products));
 console.log(getMostExpensiveProduct(emptyProducts));
 
 
-//Define an enum Day for the days of the week.
-//Create a function that returns "Weekday" or "Weekend" based on the input day.
+ 
 
 enum Day {
     Monday,
@@ -144,8 +140,6 @@ console.log(getDayType(Day.Sunday));
 
 
 
-//Create an async function that:
-//Returns the square of a number after 1 second
-//Rejects if the number is negative
+ 
 
  
