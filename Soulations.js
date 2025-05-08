@@ -71,3 +71,32 @@ var Car = /** @class */ (function (_super) {
 var myCar = new Car("Toyota", 2020, "Corolla");
 console.log(myCar.getInfo());
 console.log(myCar.getModel());
+//   Description: Write a function that takes a string | number and returns:
+//The length if it's a string
+//The number multiplied by 2 if it's a number
+function processValue(value) {
+    if (typeof value === "string") {
+        return value.length;
+    }
+    else {
+        return value * 2;
+    }
+}
+console.log(processValue("Hello"));
+console.log(processValue(10));
+function getMostExpensiveProduct(products) {
+    if (products.length === 0) {
+        return null;
+    }
+    return products.reduce(function (mostExpensive, currentProduct) {
+        return currentProduct.price > mostExpensive.price ? currentProduct : mostExpensive;
+    });
+}
+var products = [
+    { name: "Pen", price: 10 },
+    { name: "Notebook", price: 25 },
+    { name: "Bag", price: 50 }
+];
+var emptyProducts = [];
+console.log(getMostExpensiveProduct(products));
+console.log(getMostExpensiveProduct(emptyProducts));

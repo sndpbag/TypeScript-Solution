@@ -69,4 +69,51 @@ class Vehicle {
   const myCar = new Car("Toyota", 2020, "Corolla");
   console.log(myCar.getInfo());    
   console.log(myCar.getModel());   
+
+
+//   Description: Write a function that takes a string | number and returns:
+//The length if it's a string
+//The number multiplied by 2 if it's a number
+
+function processValue(value: string | number): number {
+    if (typeof value === "string") {
+      return value.length;
+    } else {
+      return value * 2;
+    }
+  }
+
+  console.log(processValue("Hello"));   
+ console.log(processValue(10));        
+
+
+
+
+//  Description: Define an interface Product and create a function to find the product with the highest price in an array. If the array is empty, return null.
+
+interface Product {
+    name: string;
+    price: number;
+  }
+  
+  function getMostExpensiveProduct(products: Product[]): Product | null {
+    if (products.length === 0) {
+      return null;
+    }
+    
+    return products.reduce((mostExpensive, currentProduct) => {
+      return currentProduct.price > mostExpensive.price ? currentProduct : mostExpensive;
+    });
+  }
+
+  const products = [
+    { name: "Pen", price: 10 },
+    { name: "Notebook", price: 25 },
+    { name: "Bag", price: 50 }
+  ];
+
+  const emptyProducts: Product[] = [];
+  
+ console.log(getMostExpensiveProduct(products));
+ console.log(getMostExpensiveProduct(emptyProducts));
   
